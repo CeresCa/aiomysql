@@ -2,6 +2,7 @@ from collections.abc import Coroutine
 
 
 class _ContextManager(Coroutine):
+
     __slots__ = ('_coro', '_obj')
 
     def __init__(self, coro):
@@ -95,6 +96,7 @@ class _TransactionContextManager(_ContextManager):
 
 
 class _PoolAcquireContextManager(_ContextManager):
+
     __slots__ = ('_coro', '_conn', '_pool')
 
     def __init__(self, coro, pool):
